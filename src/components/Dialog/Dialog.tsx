@@ -13,11 +13,12 @@ import {
 interface DialogProps {
   className?: string;
   year: string;
-  title: string; // Change type to React.ReactNode
+  title: string;
+  img?: string | undefined;
   description: React.ReactNode;
 }
 
-const Dialog = ({ className, year, title, description }: DialogProps) => {
+const Dialog = ({ className, year, title, description, img }: DialogProps) => {
   return (
     <AlertDialog>
       <AlertDialogTrigger className={className}>
@@ -25,12 +26,12 @@ const Dialog = ({ className, year, title, description }: DialogProps) => {
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
-          {/* Render title as JSX */}
           <AlertDialogTitle className="text-normal text-[2rem]">
             {title}
           </AlertDialogTitle>
-          <AlertDialogDescription className="text-normal text-[18px]">
+          <AlertDialogDescription className="text-normal text-[18px] flex flex-col gap-5">
             {description}
+            <img className="rounded-lg" src={img} />
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
