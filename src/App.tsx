@@ -79,7 +79,7 @@ function App() {
       <div id="VitaMarte" className="h-[600px] pt-[100px] bg-[#0f0b0c]">
         <FadeInOut className="flex items-center justify-center flex-col gap-[3rem]">
           <h1 className="font-sans text-normal text-6xl text-center">Conclusione</h1>
-          <p className="text-normal text-[18px] text-center w-[1000px]">Grazie per aver letto questo sito web realizzato per la borsa di studio tenuta dalla mia scuola in memoria di Marino Perissinotto, il codice per il sito web può essere trovato <a className="text-blue-400" href="">qui</a>.</p>
+          <p className="text-normal text-[18px] text-center w-[1000px]">Grazie per aver letto questo sito web realizzato per la borsa di studio tenuta dalla mia scuola in memoria di Marino Perissinotto, il codice per il sito web può essere trovato <a className="text-blue-400" href="https://github.com/davidoskiii/mars-school-project">qui</a>.</p>
         </FadeInOut>
       </div>
     </div>
