@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar.tsx";
 import Starfield from "./components/Starfield/Starfield.tsx";
 import Timeline from "./components/Timeline/Timeline.tsx";
 import Dialog from "./components/Dialog/Dialog.tsx";
-import React from 'react'
 import {
   Carousel,
   CarouselContent,
