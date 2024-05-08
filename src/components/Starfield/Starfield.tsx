@@ -1,6 +1,10 @@
-'use client';
-
 import { useEffect } from 'react';
+
+interface Star {
+	x: number;
+	y: number;
+	z: number;
+}
 
 interface Props {
 	speedFactor?: number;
@@ -32,10 +36,10 @@ export default function Starfield(props: Props) {
 					setCanvasExtents();
 				};
 
-				const makeStars = (count: number) => {
-					const out = [];
+				const makeStars = (count: number): Star[] => {
+					const out: Star[] = [];
 					for (let i = 0; i < count; i++) {
-						const s = {
+						const s: Star = {
 							x: Math.random() * 1600 - 800,
 							y: Math.random() * 900 - 450,
 							z: Math.random() * 1000,
@@ -45,25 +49,23 @@ export default function Starfield(props: Props) {
 					return out;
 				};
 
-				let stars = makeStars(starCount);
+				let stars: Star[] = makeStars(starCount);
 
+				const clear = () => {
+					const grd = c.createRadialGradient(
+						canvas.width / 2,
+						canvas.height / 2,
+						0,
+						canvas.width / 2,
+						canvas.height / 2,
+						Math.max(canvas.width, canvas.height) / 2
+					);
+					grd.addColorStop(0, '#001219');
+					grd.addColorStop(1, '#000209');
 
-        const clear = () => {
-          const grd = c.createRadialGradient(
-            canvas.width / 2,
-            canvas.height / 2,
-            0,
-            canvas.width / 2,
-            canvas.height / 2,
-            Math.max(canvas.width, canvas.height) / 2
-          );
-          grd.addColorStop(0, '#001219');
-          grd.addColorStop(1, '#000209');
-
-          c.fillStyle = grd;
-          c.fillRect(0, 0, canvas.width, canvas.height);
-        };
-
+					c.fillStyle = grd;
+					c.fillRect(0, 0, canvas.width, canvas.height);
+				};
 
 				const putPixel = (x: number, y: number, brightness: number) => {
 					const rgb =
@@ -154,8 +156,7 @@ export default function Starfield(props: Props) {
 				zIndex: -10,
 				opacity: 1,
 				pointerEvents: 'none',
-				mixBlendMode: 'screen',
-			}}
-		></canvas>
-	);
+        mixBlendMode: 'screen',
+      }} />
+  );
 }

@@ -1,5 +1,4 @@
 import { Link } from "react-scroll";
-import React from "react";
 
 const Button = ({ children, to, ...props }: any) => {
   return (
